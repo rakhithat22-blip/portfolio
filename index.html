@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rakhitha Thottingal — Data & Process Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF9F6;
+    --bg-dark:#10161F;
+    --ink:#12161E;
+    --ink-soft:#4A5266;
+    --line:#DEDCD4;
+    --teal:#1F8A82;
+    --teal-deep:#136058;
+    --amber:#C9821A;
+    --card:#FFFFFF;
+    --mono:'IBM Plex Mono', monospace;
+    --display:'Space Grotesk', sans-serif;
+    --body:'Inter', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--body);
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 28px;}
+
+  /* NAV */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(250,249,246,0.88);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px; max-width:1040px; margin:0 auto;
+  }
+  .nav-mark{font-family:var(--mono); font-size:14px; letter-spacing:0.02em; font-weight:500;}
+  .nav-links{display:flex; gap:28px; list-style:none; font-size:14px; font-weight:500;}
+  .nav-links a{text-decoration:none; color:var(--ink-soft); transition:color .2s;}
+  .nav-links a:hover{color:var(--teal-deep);}
+  @media(max-width:640px){ .nav-links{display:none;} }
+  .lang-toggle{display:flex; border:1px solid var(--line); border-radius:2px; overflow:hidden;}
+  .lang-btn{
+    font-family:var(--mono); font-size:12px; font-weight:500;
+    padding:6px 12px; background:transparent; border:none; cursor:pointer;
+    color:var(--ink-soft); transition:background .15s ease, color .15s ease;
+  }
+  .lang-btn + .lang-btn{border-left:1px solid var(--line);}
+  .lang-btn.active{background:var(--ink); color:#fff;}
+  .lang-btn:hover:not(.active){background:#EFEDE6;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:96px 0 72px;
+    overflow:hidden;
+  }
+  .hero-eyebrow{
+    font-family:var(--mono); font-size:13px; color:var(--teal-deep);
+    letter-spacing:0.06em; text-transform:uppercase; margin-bottom:18px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .dot{width:7px; height:7px; border-radius:50%; background:var(--teal); display:inline-block; box-shadow:0 0 0 4px rgba(31,138,130,0.15);}
+  h1.name{
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(40px, 7vw, 68px);
+    line-height:1.02; letter-spacing:-0.01em;
+    margin-bottom:14px;
+  }
+  .role{
+    font-family:var(--display); font-weight:500; font-size:clamp(18px,2.6vw,24px);
+    color:var(--ink-soft); margin-bottom:22px;
+  }
+  .role .accent{color:var(--teal-deep);}
+  .tagline{max-width:560px; font-size:17px; color:var(--ink-soft); margin-bottom:34px;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:56px;}
+  .btn{
+    font-family:var(--body); font-weight:600; font-size:14px;
+    padding:12px 22px; border-radius:2px; text-decoration:none;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{background:var(--ink); color:#fff;}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 6px 16px rgba(0,0,0,0.18);}
+  .btn-outline{border:1px solid var(--ink); color:var(--ink);}
+  .btn-outline:hover{transform:translateY(-2px); background:var(--ink); color:#fff;}
+
+  /* signal line signature */
+  .signal-wrap{width:100%; height:150px; position:relative;}
+  .signal-wrap svg{width:100%; height:100%; overflow:visible;}
+  .signal-path{
+    fill:none; stroke:var(--teal); stroke-width:2;
+    stroke-dasharray:1400; stroke-dashoffset:1400;
+    animation:draw 2.4s ease forwards .3s;
+  }
+  .signal-path.amber{stroke:var(--amber); opacity:0.55; animation-delay:.6s;}
+  @keyframes draw{ to{stroke-dashoffset:0;} }
+  .signal-dot{fill:var(--teal); opacity:0; animation:pop .4s ease forwards;}
+  @media (prefers-reduced-motion: reduce){
+    .signal-path{animation:none; stroke-dashoffset:0;}
+    .signal-dot{animation:none; opacity:1;}
+  }
+  @keyframes pop{ to{opacity:1;} }
+
+  /* SECTION shared */
+  section{padding:64px 0;}
+  .section-head{display:flex; align-items:baseline; gap:14px; margin-bottom:36px;}
+  .section-num{font-family:var(--mono); font-size:13px; color:var(--teal-deep);}
+  h2{font-family:var(--display); font-weight:600; font-size:clamp(24px,3.4vw,32px); letter-spacing:-0.01em;}
+  .rule{border:none; border-top:1px solid var(--line);}
+
+  /* ABOUT */
+  .about-grid{display:grid; grid-template-columns:1.4fr 1fr; gap:48px;}
+  @media(max-width:760px){ .about-grid{grid-template-columns:1fr;} }
+  .about-text p{font-size:16px; color:var(--ink-soft); margin-bottom:16px;}
+  .about-facts{font-family:var(--mono); font-size:13.5px; color:var(--ink-soft);}
+  .fact-row{display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--line);}
+  .fact-row span:first-child{color:var(--ink); opacity:.55;}
+
+  /* EXPERIENCE */
+  .exp-item{
+    display:grid; grid-template-columns:150px 1fr; gap:28px;
+    padding:26px 0; border-bottom:1px solid var(--line);
+  }
+  .exp-item:first-of-type{border-top:1px solid var(--line);}
+  @media(max-width:640px){ .exp-item{grid-template-columns:1fr; gap:6px;} }
+  .exp-date{font-family:var(--mono); font-size:12.5px; color:var(--ink-soft); padding-top:3px;}
+  .exp-role{font-family:var(--display); font-weight:600; font-size:18px; margin-bottom:2px;}
+  .exp-company{font-size:14px; color:var(--teal-deep); font-weight:500; margin-bottom:10px;}
+  .exp-item ul{padding-left:18px; color:var(--ink-soft); font-size:14.5px;}
+  .exp-item li{margin-bottom:5px;}
+
+  /* PROJECTS */
+  .proj-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media(max-width:860px){ .proj-grid{grid-template-columns:1fr;} }
+  .proj-card{
+    background:var(--card); border:1px solid var(--line); border-radius:3px;
+    overflow:hidden; display:flex; flex-direction:column;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .proj-card:hover{transform:translateY(-4px); box-shadow:0 14px 30px rgba(16,22,31,0.08);}
+  .proj-img{width:100%; height:150px; object-fit:cover; object-position:top; border-bottom:1px solid var(--line); background:#eee;}
+  .proj-body{padding:20px; display:flex; flex-direction:column; flex:1;}
+  .proj-title{font-family:var(--display); font-weight:600; font-size:16.5px; margin-bottom:8px;}
+  .proj-desc{font-size:13.8px; color:var(--ink-soft); margin-bottom:14px; flex:1;}
+  .tag-row{display:flex; flex-wrap:wrap; gap:6px;}
+  .tag{font-family:var(--mono); font-size:11px; padding:4px 8px; background:#F0EEE7; color:var(--ink-soft); border-radius:2px;}
+
+  /* SKILLS */
+  .skill-group{margin-bottom:26px;}
+  .skill-label{font-family:var(--mono); font-size:12.5px; color:var(--teal-deep); text-transform:uppercase; letter-spacing:.05em; margin-bottom:10px;}
+  .skill-tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .skill-tag{
+    font-family:var(--mono); font-size:13px; padding:7px 12px;
+    border:1px solid var(--line); border-radius:2px; color:var(--ink);
+    background:var(--card);
+  }
+
+  /* CONTACT */
+  .contact{background:var(--bg-dark); color:#EDEFF3; border-radius:4px; padding:56px 40px; text-align:center;}
+  .contact h2{color:#fff;}
+  .contact p{color:#A7AEBB; max-width:480px; margin:14px auto 30px; font-size:15.5px;}
+  .contact-links{display:flex; justify-content:center; gap:16px; flex-wrap:wrap;}
+  .contact .btn-primary{background:var(--teal);}
+  .contact .btn-outline{border-color:#3A4152; color:#EDEFF3;}
+  .contact .btn-outline:hover{background:#EDEFF3; color:var(--bg-dark);}
+
+  footer{padding:36px 0; text-align:center; font-family:var(--mono); font-size:12px; color:var(--ink-soft);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-mark">RT / DATA_ANALYST</div>
+    <ul class="nav-links">
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="lang-toggle" role="group" aria-label="Language switch">
+      <button type="button" class="lang-btn" data-lang="de">DE</button>
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow"><span class="dot"></span><span data-i18n="hero.eyebrow">Open to opportunities in Germany</span></div>
+    <h1 class="name">Rakhitha Thottingal</h1>
+    <p class="role" data-i18n="hero.role">Data &amp; Process Analyst — <span class="accent">turning raw signals into decisions</span></p>
+    <p class="tagline" data-i18n="hero.tagline">I build real-time data pipelines, quality-check technical processes, and ship dashboards people actually use — with Python, SQL, and a healthy obsession with finding the root cause.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="mailto:rakhithat22@gmail.com?subject=Let's%20talk" data-i18n="hero.cta1">Get in touch</a>
+      <a class="btn btn-outline" href="#experience" data-i18n="hero.cta2">View experience ↓</a>
+    </div>
+    <div class="signal-wrap" aria-hidden="true">
+      <svg viewBox="0 0 1000 150" preserveAspectRatio="none">
+        <path class="signal-path" d="M0,90 C60,90 60,40 120,40 C180,40 180,110 240,110 C300,110 300,60 360,60 C420,60 420,20 480,20 C540,20 540,95 600,95 C660,95 660,50 720,50 C780,50 780,75 840,75 C900,75 900,30 960,30 L1000,30" />
+        <path class="signal-path amber" d="M0,120 C80,120 80,80 160,80 C240,80 240,130 320,130 C400,130 400,70 480,70 C560,70 560,100 640,100 C720,100 720,55 800,55 C880,55 880,90 960,90 L1000,90" />
+        <circle class="signal-dot" cx="480" cy="20" r="4" style="animation-delay:1.9s"/>
+        <circle class="signal-dot" cx="960" cy="30" r="4" style="animation-delay:2.3s"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">01</span><h2 data-i18n="about.heading">About</h2></div>
+    <hr class="rule" style="margin-bottom:36px;">
+    <div class="about-grid">
+      <div class="about-text">
+        <p data-i18n="about.p1">I'm a data analyst with three-plus years of hands-on experience sitting at the intersection of technical process quality and applied data science — validating ERP data flows, building live market-data pipelines, and translating messy operational signals into dashboards that non-technical stakeholders can actually act on.</p>
+        <p data-i18n="about.p2">Currently based in Duisburg, Germany, pursuing an M.Sc. in Technical Logistics at the University of Duisburg-Essen while working part-time in process &amp; data management. I like problems where the interesting part is figuring out <em>why</em> the numbers look wrong, not just reporting that they do.</p>
+      </div>
+      <div class="about-facts">
+        <div class="fact-row"><span data-i18n="about.fact.location">Location</span><span>Duisburg, Germany</span></div>
+        <div class="fact-row"><span data-i18n="about.fact.experience">Experience</span><span data-i18n="about.fact.experienceVal">3+ years</span></div>
+        <div class="fact-row"><span data-i18n="about.fact.stack">Core stack</span><span>Python · SQL</span></div>
+        <div class="fact-row"><span data-i18n="about.fact.languages">Languages</span><span data-i18n="about.fact.languagesVal">EN · DE (B2)</span></div>
+        <div class="fact-row"><span data-i18n="about.fact.email">Email</span><span>rakhithat22@gmail.com</span></div>
+        <div class="fact-row"><span data-i18n="about.fact.phone">Phone</span><span>+49 1520 5414390</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">02</span><h2 data-i18n="exp.heading">Experience</h2></div>
+
+    <div class="exp-item">
+      <div class="exp-date">04.2025 — <span data-i18n="exp.present">present</span></div>
+      <div>
+        <div class="exp-role"><span data-i18n="exp.job1.role">Process &amp; Data Management</span> <span style="color:var(--ink-soft); font-weight:400; font-size:14px;" data-i18n="exp.job1.type">(Minijob)</span></div>
+        <div class="exp-company">Comcoplast GmbH, Düsseldorf</div>
+        <ul>
+          <li data-i18n="exp.job1.b1">Monitor and validate critical logistics and billing data in Microsoft Dynamics 365 Business Central</li>
+          <li data-i18n="exp.job1.b2">Analyze operational workflows and implement tracking protocols to prevent bottlenecks</li>
+          <li data-i18n="exp.job1.b3">Coordinate technical and operational requirements between international manufacturers and internal teams</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">08.2023 — 02.2025</div>
+      <div>
+        <div class="exp-role" data-i18n="exp.job2.role">Technology Analyst</div>
+        <div class="exp-company">Pratiti Analytics Solutions LLP, Chennai</div>
+        <ul>
+          <li data-i18n="exp.job2.b1">Built a scalable real-time data pipeline ingesting live NSE market data via API + RabbitMQ</li>
+          <li data-i18n="exp.job2.b2">Implemented RSI, MACD, and VWAP algorithms in Python for automated signal generation</li>
+          <li data-i18n="exp.job2.b3">Designed an interactive Plotly Dash web app for signal, quality, and performance analysis</li>
+          <li data-i18n="exp.job2.b4">Restructured SQLite/SQL storage, noticeably improving query speed</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">08.2021 — 01.2023</div>
+      <div>
+        <div class="exp-role" data-i18n="exp.job3.role">Analyst Programmer (Data &amp; Reporting)</div>
+        <div class="exp-company">Ramco Systems, Chennai</div>
+        <ul>
+          <li data-i18n="exp.job3.b1">Administered and performance-tuned global HR database systems with SQL &amp; SQL Server Profiler</li>
+          <li data-i18n="exp.job3.b2">Built SSRS reporting structures and custom SQL queries for reliable quality metrics</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">10.2020 — 03.2021</div>
+      <div>
+        <div class="exp-role" data-i18n="exp.job4.role">Internship — Lead Management Systems</div>
+        <div class="exp-company">First Feet Business Services, India</div>
+        <ul>
+          <li data-i18n="exp.job4.b1">Developed a web application and relational SQL/PL-SQL databases for structured data capture</li>
+          <li data-i18n="exp.job4.b2">Built Power BI dashboards for process transparency; implemented data masking and access control</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">03</span><h2 data-i18n="proj.heading">Projects</h2></div>
+    <div class="proj-grid">
+
+      <div class="proj-card">
+        <img class="proj-img" src="dashboard-screenshot.png" alt="Stoxila signal dashboard screenshot">
+        <div class="proj-body">
+          <div class="proj-title" data-i18n="proj.p1.title">Live Trading Signal Dashboard</div>
+          <p class="proj-desc" data-i18n="proj.p1.desc">Real-time NSE signal engine — RabbitMQ ingestion, RSI/MACD/VWAP-based Buy/Sell signal generation, Telegram alerts, and a filterable Plotly Dash frontend for tracking signal accuracy over time.</p>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">RabbitMQ</span><span class="tag">Dash</span><span class="tag">SQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-body" style="padding-top:24px;">
+          <div class="proj-title" data-i18n="proj.p2.title">ERP Data Integrity Monitoring</div>
+          <p class="proj-desc" data-i18n="proj.p2.desc">Validation layer for logistics and billing data in MS Dynamics 365 Business Central — tracking protocols to catch anomalies before they cascade downstream.</p>
+          <div class="tag-row">
+            <span class="tag">Dynamics 365</span><span class="tag">Process QA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-body" style="padding-top:24px;">
+          <div class="proj-title" data-i18n="proj.p3.title">HR Reporting &amp; DB Tuning</div>
+          <p class="proj-desc" data-i18n="proj.p3.desc">Performance-tuned global HR database systems and built SSRS reporting structures to deliver consistent, trustworthy quality metrics across teams.</p>
+          <div class="tag-row">
+            <span class="tag">SQL Server</span><span class="tag">SSRS</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">04</span><h2 data-i18n="skills.heading">Skills</h2></div>
+
+    <div class="skill-group">
+      <div class="skill-label" data-i18n="skills.group1">Languages &amp; Frameworks</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span>
+        <span class="skill-tag">Flask</span><span class="skill-tag">Dash</span><span class="skill-tag">Plotly</span>
+        <span class="skill-tag">SQL</span><span class="skill-tag">JavaScript</span><span class="skill-tag">HTML/CSS</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-label" data-i18n="skills.group2">Databases &amp; Infrastructure</div>
+      <div class="skill-tags">
+        <span class="skill-tag">SQL Server</span><span class="skill-tag">SQLite</span><span class="skill-tag">PL/SQL</span>
+        <span class="skill-tag">RabbitMQ</span><span class="skill-tag">REST APIs</span><span class="skill-tag">AWS</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-label" data-i18n="skills.group3">BI &amp; ERP</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Power BI</span><span class="skill-tag">Tableau</span><span class="skill-tag">SSRS</span>
+        <span class="skill-tag">MS Dynamics 365 BC</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-label" data-i18n="skills.group4">Methods</div>
+      <div class="skill-tags">
+        <span class="skill-tag" data-i18n="skills.m1">Process Analysis</span><span class="skill-tag" data-i18n="skills.m2">Root Cause Analysis</span>
+        <span class="skill-tag" data-i18n="skills.m3">Data Modeling</span><span class="skill-tag">Prototyping</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <h2 data-i18n="contact.heading">Let's talk</h2>
+      <p data-i18n="contact.body">Open to Junior / Mid-level Data Analyst roles in Germany. Fastest way to reach me is email — happy to send my CV or walk through any of the projects above.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:rakhithat22@gmail.com?subject=Let's%20talk">rakhithat22@gmail.com</a>
+        <a class="btn btn-outline" href="https://linkedin.com/in/rakhitha-thottingal" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-outline" href="https://github.com/rakhitha-t" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer data-i18n="footer.text">Duisburg, Germany — © 2026 Rakhitha Thottingal</footer>
+
+<script>
+const translations = {
+  de: {
+    "nav.about":"Über mich","nav.experience":"Erfahrung","nav.projects":"Projekte","nav.skills":"Kenntnisse","nav.contact":"Kontakt",
+    "hero.eyebrow":"Offen für neue Positionen in Deutschland",
+    "hero.role":"Data &amp; Process Analystin — <span class=\"accent\">macht aus Rohsignalen Entscheidungen</span>",
+    "hero.tagline":"Ich baue Echtzeit-Datenpipelines, prüfe technische Prozesse auf Qualität und entwickle Dashboards, die wirklich genutzt werden — mit Python, SQL und einer gesunden Portion Neugier für die Ursache.",
+    "hero.cta1":"Kontakt aufnehmen","hero.cta2":"Erfahrung ansehen ↓",
+    "about.heading":"Über mich",
+    "about.p1":"Ich bin Data-Analystin mit über drei Jahren praktischer Erfahrung an der Schnittstelle von technischer Prozessqualität und angewandter Datenanalyse — von der Validierung von ERP-Datenflüssen über den Aufbau von Live-Marktdaten-Pipelines bis hin zu Dashboards, mit denen auch nicht-technische Stakeholder direkt arbeiten können.",
+    "about.p2":"Aktuell lebe ich in Duisburg und studiere M.Sc. Technische Logistik an der Universität Duisburg-Essen, während ich parallel im Bereich Prozess- &amp; Datenverwaltung arbeite. Mich interessiert vor allem, <em>warum</em> Zahlen nicht passen — nicht nur, dass sie es nicht tun.",
+    "about.fact.location":"Standort","about.fact.experience":"Erfahrung","about.fact.experienceVal":"3+ Jahre",
+    "about.fact.stack":"Kernkompetenz","about.fact.languages":"Sprachen","about.fact.languagesVal":"EN · DE (B2)",
+    "about.fact.email":"E-Mail","about.fact.phone":"Telefon",
+    "exp.heading":"Berufliche Erfahrung","exp.present":"heute",
+    "exp.job1.role":"Prozess- &amp; Datenverwaltung","exp.job1.type":"(Minijob)",
+    "exp.job1.b1":"Überwachung und Validierung kritischer Logistik- und Abrechnungsdaten in Microsoft Dynamics 365 Business Central",
+    "exp.job1.b2":"Analyse operativer Abläufe und Implementierung von Tracking-Protokollen zur Vermeidung von Engpässen",
+    "exp.job1.b3":"Technische und operative Abstimmung zwischen internationalen Herstellern und internen Teams",
+    "exp.job2.role":"Technology Analyst",
+    "exp.job2.b1":"Aufbau einer skalierbaren Echtzeit-Datenpipeline zur Erfassung von Live-Marktdaten (NSE) über API und RabbitMQ",
+    "exp.job2.b2":"Implementierung von RSI-, MACD- und VWAP-Algorithmen in Python zur automatisierten Signalgenerierung",
+    "exp.job2.b3":"Entwicklung einer interaktiven Plotly-Dash-Webanwendung zur Signal-, Qualitäts- und Performance-Analyse",
+    "exp.job2.b4":"Restrukturierung von SQLite/SQL-Datenbanken, was zu spürbar schnelleren Abfragezeiten führte",
+    "exp.job3.role":"Analyst Programmer (Daten &amp; Reporting)",
+    "exp.job3.b1":"Administration und Performance-Tuning globaler HR-Datenbanksysteme mittels SQL und SQL Server Profiler",
+    "exp.job3.b2":"Aufbau von SSRS-Reporting-Strukturen und Entwicklung maßgeschneiderter SQL-Abfragen",
+    "exp.job4.role":"Praktikum — Lead Management Systems",
+    "exp.job4.b1":"Entwicklung einer Web-Applikation und relationaler SQL/PL-SQL-Datenbanken zur strukturierten Datenerfassung",
+    "exp.job4.b2":"Erstellung von Power-BI-Dashboards zur Prozess-Transparenz sowie Implementierung von Datenmaskierung und Zugriffskontrollen",
+    "proj.heading":"Projekte",
+    "proj.p1.title":"Live-Trading-Signal-Dashboard",
+    "proj.p1.desc":"Echtzeit-Signal-Engine für NSE-Marktdaten — RabbitMQ-Ingestion, RSI/MACD/VWAP-basierte Kauf-/Verkaufssignale, Telegram-Benachrichtigungen und ein filterbares Plotly-Dash-Frontend zur Analyse der Signalgenauigkeit.",
+    "proj.p2.title":"ERP-Datenintegritätsprüfung",
+    "proj.p2.desc":"Validierungsschicht für Logistik- und Abrechnungsdaten in MS Dynamics 365 Business Central — Tracking-Protokolle zur frühzeitigen Erkennung von Anomalien.",
+    "proj.p3.title":"HR-Reporting &amp; Datenbank-Tuning",
+    "proj.p3.desc":"Performance-Tuning globaler HR-Datenbanksysteme sowie Aufbau von SSRS-Reporting-Strukturen für verlässliche Qualitätskennzahlen.",
+    "skills.heading":"Kenntnisse",
+    "skills.group1":"Sprachen &amp; Frameworks","skills.group2":"Datenbanken &amp; Infrastruktur",
+    "skills.group3":"BI &amp; ERP","skills.group4":"Methoden",
+    "skills.m1":"Prozessanalyse","skills.m2":"Root-Cause-Analyse","skills.m3":"Datenmodellierung",
+    "contact.heading":"Lass uns sprechen",
+    "contact.body":"Offen für Junior-/Mid-Level-Positionen als Data Analyst in Deutschland. Am schnellsten erreichst du mich per E-Mail — ich schicke gerne meinen Lebenslauf oder gehe die Projekte oben im Detail durch.",
+    "footer.text":"Duisburg, Deutschland — © 2026 Rakhitha Thottingal"
+  },
+  en: {} // filled from original DOM below
+};
+
+// capture original English strings as the "en" dictionary
+document.querySelectorAll('[data-i18n]').forEach(el => {
+  translations.en[el.getAttribute('data-i18n')] = el.innerHTML;
+});
+
+function applyLanguage(lang){
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const dict = translations[lang];
+    if (dict && dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyLanguage(btn.getAttribute('data-lang')));
+});
+
+// default to German
+applyLanguage('de');
+</script>
+</body>
+</html>

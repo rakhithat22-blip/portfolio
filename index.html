@@ -166,6 +166,16 @@
     background:var(--card);
   }
 
+  /* ACHIEVEMENTS */
+  .ach-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;}
+  @media(max-width:760px){ .ach-grid{grid-template-columns:1fr;} }
+  .ach-photo img{width:100%; border-radius:3px; display:block; border:1px solid var(--line);}
+  .ach-caption{font-family:var(--mono); font-size:12px; color:var(--ink-soft); margin-top:10px; line-height:1.5;}
+  .ach-item{padding:16px 0; border-bottom:1px solid var(--line);}
+  .ach-item:first-child{padding-top:0;}
+  .ach-title{font-family:var(--display); font-weight:600; font-size:15.5px; margin-bottom:4px;}
+  .ach-sub{font-size:13.5px; color:var(--ink-soft);}
+
   /* CONTACT */
   .contact{background:var(--bg-dark); color:#EDEFF3; border-radius:4px; padding:56px 40px; text-align:center;}
   .contact h2{color:#fff;}
@@ -188,6 +198,7 @@
       <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
       <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
       <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#achievements" data-i18n="nav.achievements">Achievements</a></li>
       <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
     </ul>
     <div class="lang-toggle" role="group" aria-label="Language switch">
@@ -204,8 +215,9 @@
     <p class="role" data-i18n="hero.role">Data &amp; Process Analyst — <span class="accent">turning raw signals into decisions</span></p>
     <p class="tagline" data-i18n="hero.tagline">I build real-time data pipelines, quality-check technical processes, and ship dashboards people actually use — with Python, SQL, and a healthy obsession with finding the root cause.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="mailto:rakhithat22@gmail.com?subject=Let's%20talk" data-i18n="hero.cta1">Get in touch</a>
-      <a class="btn btn-outline" href="#experience" data-i18n="hero.cta2">View experience ↓</a>
+      <a class="btn btn-primary" href="mailto:rakhithat22@gmail.com?subject=Hello%20Rakhitha" data-i18n="hero.cta1">Get in touch</a>
+      <a class="btn btn-outline" href="CV_Rakhitha_Thottingal_EN.docx" download data-i18n="hero.cvEN">Download CV (EN)</a>
+      <a class="btn btn-outline" href="Lebenslauf_Rakhitha_Thottingal.docx" download data-i18n="hero.cvDE">Lebenslauf (DE)</a>
     </div>
     <div class="signal-wrap" aria-hidden="true">
       <svg viewBox="0 0 1000 150" preserveAspectRatio="none">
@@ -225,7 +237,8 @@
     <div class="about-grid">
       <div class="about-text">
         <p data-i18n="about.p1">I'm a data analyst with three-plus years of hands-on experience sitting at the intersection of technical process quality and applied data science — validating ERP data flows, building live market-data pipelines, and translating messy operational signals into dashboards that non-technical stakeholders can actually act on.</p>
-        <p data-i18n="about.p2">Currently based in Duisburg, Germany, pursuing an M.Sc. in Technical Logistics at the University of Duisburg-Essen while working part-time in process &amp; data management. I like problems where the interesting part is figuring out <em>why</em> the numbers look wrong, not just reporting that they do.</p>
+        <p data-i18n="about.p2">Currently based in Duisburg, Germany, pursuing an M.Sc. in Technical Logistics at the University of Duisburg-Essen while working part-time in Administration Support. I like problems where the interesting part is figuring out <em>why</em> the numbers look wrong, not just reporting that they do.</p>
+        <p data-i18n="about.p3">I moved to Germany to build a long-term career in data and logistics — currently at B2 German and actively growing that alongside my Master's and work.</p>
       </div>
       <div class="about-facts">
         <div class="fact-row"><span data-i18n="about.fact.location">Location</span><span>Duisburg, Germany</span></div>
@@ -246,7 +259,7 @@
     <div class="exp-item">
       <div class="exp-date">04.2025 — <span data-i18n="exp.present">present</span></div>
       <div>
-        <div class="exp-role"><span data-i18n="exp.job1.role">Process &amp; Data Management</span> <span style="color:var(--ink-soft); font-weight:400; font-size:14px;" data-i18n="exp.job1.type">(Minijob)</span></div>
+        <div class="exp-role"><span data-i18n="exp.job1.role">Administration Support</span> <span style="color:var(--ink-soft); font-weight:400; font-size:14px;" data-i18n="exp.job1.type">(Minijob)</span></div>
         <div class="exp-company">Comcoplast GmbH, Düsseldorf</div>
         <ul>
           <li data-i18n="exp.job1.b1">Monitor and validate critical logistics and billing data in Microsoft Dynamics 365 Business Central</li>
@@ -332,13 +345,63 @@
         </div>
       </div>
 
+      <div class="proj-card">
+        <div class="proj-body" style="padding-top:24px;">
+          <div class="proj-title" data-i18n="proj.p4.title">Embroidery Machine Monitoring — Smart India Hackathon</div>
+          <p class="proj-desc" data-i18n="proj.p4.desc">Built an online monitoring system for embroidery machines using machine learning, computer vision, and edge computing, with Slack and Twilio integration for real-time alerts. Delivered in a 6-person team at SIH 2019, the world's largest hackathon.</p>
+          <div class="tag-row">
+            <span class="tag">Computer Vision</span><span class="tag">Edge Computing</span><span class="tag">Twilio</span><span class="tag">Slack API</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-body" style="padding-top:24px;">
+          <div class="proj-title" data-i18n="proj.p5.title">Man-Animal Conflict Prevention System</div>
+          <p class="proj-desc" data-i18n="proj.p5.desc">Sensor-based early-warning system to protect farmland from wildlife intrusion using a camera, electric fencing, lighting, and an LCD display — controlled by a microcontroller running Python, with CSV-based data logging.</p>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">IoT Sensors</span><span class="tag">Microcontroller</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">04</span><h2 data-i18n="ach.heading">Achievements &amp; Certifications</h2></div>
+    <div class="ach-grid">
+      <div class="ach-photo">
+        <img src="sih-team.jpg" alt="Team celebrating Smart India Hackathon 2019 win">
+        <div class="ach-caption" data-i18n="ach.photoCaption">Team Cyber Thug Squad — Winners, Smart India Hackathon 2019 (Grand Finale, Banaras Hindu University)</div>
+      </div>
+      <div class="ach-list">
+        <div class="ach-item">
+          <div class="ach-title" data-i18n="ach.item1.title">🏆 Winner — Smart India Hackathon 2019</div>
+          <div class="ach-sub" data-i18n="ach.item1.sub">National-level hackathon organized by MHRD, AICTE &amp; Persistent Systems — Software Edition Grand Finale, Banaras Hindu University</div>
+        </div>
+        <div class="ach-item">
+          <div class="ach-title" data-i18n="ach.item2.title">🎓 M.Sc. Computer Science — First Class with Distinction</div>
+          <div class="ach-sub">Bharathiar University, 2021</div>
+        </div>
+        <div class="ach-item">
+          <div class="ach-title" data-i18n="ach.item3.title">🎓 B.C.A. — First Class with Distinction</div>
+          <div class="ach-sub">Bharathiar University, 2019</div>
+        </div>
+        <div class="ach-item">
+          <div class="ach-title" data-i18n="ach.item4.title">📜 Robotic Process Automation — GUVI / UiPath Academic Alliance</div>
+          <div class="ach-sub" data-i18n="ach.item4.sub">Certificate of completion, RPA Skill-a-thon 2020</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="skills">
   <div class="wrap">
-    <div class="section-head"><span class="section-num">04</span><h2 data-i18n="skills.heading">Skills</h2></div>
+    <div class="section-head"><span class="section-num">05</span><h2 data-i18n="skills.heading">Skills</h2></div>
 
     <div class="skill-group">
       <div class="skill-label" data-i18n="skills.group1">Languages &amp; Frameworks</div>
@@ -378,7 +441,7 @@
       <h2 data-i18n="contact.heading">Let's talk</h2>
       <p data-i18n="contact.body">Open to Junior / Mid-level Data Analyst roles in Germany. Fastest way to reach me is email — happy to send my CV or walk through any of the projects above.</p>
       <div class="contact-links">
-        <a class="btn btn-primary" href="mailto:rakhithat22@gmail.com?subject=Let's%20talk">rakhithat22@gmail.com</a>
+        <a class="btn btn-primary" href="mailto:rakhithat22@gmail.com?subject=Hello%20Rakhitha">rakhithat22@gmail.com</a>
         <a class="btn btn-outline" href="https://linkedin.com/in/rakhitha-thottingal" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn btn-outline" href="https://github.com/rakhitha-t" target="_blank" rel="noopener">GitHub</a>
       </div>
@@ -391,19 +454,21 @@
 <script>
 const translations = {
   de: {
-    "nav.about":"Über mich","nav.experience":"Erfahrung","nav.projects":"Projekte","nav.skills":"Kenntnisse","nav.contact":"Kontakt",
+    "nav.about":"Über mich","nav.experience":"Erfahrung","nav.projects":"Projekte","nav.skills":"Kenntnisse","nav.achievements":"Erfolge","nav.contact":"Kontakt",
     "hero.eyebrow":"Offen für neue Positionen in Deutschland",
     "hero.role":"Data &amp; Process Analystin — <span class=\"accent\">macht aus Rohsignalen Entscheidungen</span>",
     "hero.tagline":"Ich baue Echtzeit-Datenpipelines, prüfe technische Prozesse auf Qualität und entwickle Dashboards, die wirklich genutzt werden — mit Python, SQL und einer gesunden Portion Neugier für die Ursache.",
     "hero.cta1":"Kontakt aufnehmen","hero.cta2":"Erfahrung ansehen ↓",
+    "hero.cvEN":"CV herunterladen (EN)","hero.cvDE":"Lebenslauf (DE)",
     "about.heading":"Über mich",
     "about.p1":"Ich bin Data-Analystin mit über drei Jahren praktischer Erfahrung an der Schnittstelle von technischer Prozessqualität und angewandter Datenanalyse — von der Validierung von ERP-Datenflüssen über den Aufbau von Live-Marktdaten-Pipelines bis hin zu Dashboards, mit denen auch nicht-technische Stakeholder direkt arbeiten können.",
-    "about.p2":"Aktuell lebe ich in Duisburg und studiere M.Sc. Technische Logistik an der Universität Duisburg-Essen, während ich parallel im Bereich Prozess- &amp; Datenverwaltung arbeite. Mich interessiert vor allem, <em>warum</em> Zahlen nicht passen — nicht nur, dass sie es nicht tun.",
+    "about.p2":"Aktuell lebe ich in Duisburg und studiere M.Sc. Technische Logistik an der Universität Duisburg-Essen, während ich parallel als Administration Support arbeite. Mich interessiert vor allem, <em>warum</em> Zahlen nicht passen — nicht nur, dass sie es nicht tun.",
+    "about.p3":"Ich bin nach Deutschland gezogen, um langfristig im Bereich Daten &amp; Logistik Fuß zu fassen — aktuell auf B2-Niveau in Deutsch und arbeite stetig daran, das neben Studium und Beruf weiter auszubauen.",
     "about.fact.location":"Standort","about.fact.experience":"Erfahrung","about.fact.experienceVal":"3+ Jahre",
     "about.fact.stack":"Kernkompetenz","about.fact.languages":"Sprachen","about.fact.languagesVal":"EN · DE (B2)",
     "about.fact.email":"E-Mail","about.fact.phone":"Telefon",
     "exp.heading":"Berufliche Erfahrung","exp.present":"heute",
-    "exp.job1.role":"Prozess- &amp; Datenverwaltung","exp.job1.type":"(Minijob)",
+    "exp.job1.role":"Administration Support","exp.job1.type":"(Minijob)",
     "exp.job1.b1":"Überwachung und Validierung kritischer Logistik- und Abrechnungsdaten in Microsoft Dynamics 365 Business Central",
     "exp.job1.b2":"Analyse operativer Abläufe und Implementierung von Tracking-Protokollen zur Vermeidung von Engpässen",
     "exp.job1.b3":"Technische und operative Abstimmung zwischen internationalen Herstellern und internen Teams",
@@ -425,6 +490,18 @@ const translations = {
     "proj.p2.desc":"Validierungsschicht für Logistik- und Abrechnungsdaten in MS Dynamics 365 Business Central — Tracking-Protokolle zur frühzeitigen Erkennung von Anomalien.",
     "proj.p3.title":"HR-Reporting &amp; Datenbank-Tuning",
     "proj.p3.desc":"Performance-Tuning globaler HR-Datenbanksysteme sowie Aufbau von SSRS-Reporting-Strukturen für verlässliche Qualitätskennzahlen.",
+    "proj.p4.title":"Stickmaschinen-Überwachung — Smart India Hackathon",
+    "proj.p4.desc":"Entwicklung eines Online-Überwachungssystems für Stickmaschinen mit Machine Learning, Computer Vision und Edge Computing, inklusive Slack- und Twilio-Integration für Echtzeit-Benachrichtigungen. Umgesetzt im 6-köpfigen Team beim SIH 2019, dem weltweit größten Hackathon.",
+    "proj.p5.title":"Frühwarnsystem gegen Mensch-Tier-Konflikte",
+    "proj.p5.desc":"Sensorbasiertes Frühwarnsystem zum Schutz von Ackerland vor Wildtieren — mit Kamera, Elektrozaun, Beleuchtung und LCD-Display, gesteuert über einen Mikrocontroller mit Python und CSV-basierter Datenspeicherung.",
+    "ach.heading":"Erfolge &amp; Zertifikate",
+    "ach.photoCaption":"Team Cyber Thug Squad — Gewinner des Smart India Hackathon 2019 (Finale, Banaras Hindu University)",
+    "ach.item1.title":"🏆 Gewinner — Smart India Hackathon 2019",
+    "ach.item1.sub":"Landesweiter Hackathon, organisiert von MHRD, AICTE &amp; Persistent Systems — Software Edition Finale, Banaras Hindu University",
+    "ach.item2.title":"🎓 M.Sc. Computer Science — mit Auszeichnung",
+    "ach.item3.title":"🎓 B.C.A. — mit Auszeichnung",
+    "ach.item4.title":"📜 Robotic Process Automation — GUVI / UiPath Academic Alliance",
+    "ach.item4.sub":"Abschlusszertifikat, RPA Skill-a-thon 2020",
     "skills.heading":"Kenntnisse",
     "skills.group1":"Sprachen &amp; Frameworks","skills.group2":"Datenbanken &amp; Infrastruktur",
     "skills.group3":"BI &amp; ERP","skills.group4":"Methoden",

@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rakhitha Thottingal — Data & Process Analyst</title>
   
-  <meta name="description" content="Portfolio of Rakhitha Thottingal — Data & Process Analyst based in Duisburg, Germany specializing in Python, SQL, Power BI, and real-time pipelines.">
+  <meta name="description" content="Portfolio of Rakhitha Thottingal — Data & Process Analyst based in Duisburg, Germany specializing in Python, SQL, Power BI, and Data Pipelines.">
   <meta property="og:title" content="Rakhitha Thottingal — Data & Process Analyst">
   <meta property="og:description" content="Data & Process Analyst with 3+ years of experience in Python, SQL, real-time pipelines, and ERP monitoring.">
-  <meta property="og:image" content="dashboard-screenshot.png">
   <meta property="og:type" content="website">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,16 +15,15 @@
 
   <style>
     :root {
-      --bg: #F8FAFC;                  /* Modern slate light background */
-      --bg-dark: #0F172A;             /* Deep slate blue */
-      --card: #FFFFFF;
-      --ink: #0F172A;                 /* Primary text */
-      --ink-soft: #475569;            /* Secondary text */
-      --line: #E2E8F0;                /* Crisp border */
-      --teal: #0D9488;                /* Vibrant modern teal */
-      --teal-light: #CCFBF1;
-      --amber: #D97706;               /* Metric accent */
-      --amber-light: #FEF3C7;
+      --bg: #0B0F17;                  /* Deep slate dark background */
+      --card: #131B2E;                /* Modern card surface */
+      --card-border: #1E293B;         /* Border color */
+      --ink: #F8FAFC;                 /* Primary text */
+      --ink-soft: #94A3B8;            /* Secondary text */
+      --line: #334155;                /* Crisp divider */
+      --teal: #14B8A6;                /* Vibrant modern teal */
+      --teal-light: rgba(20, 184, 166, 0.15);
+      --amber: #F59E0B;               /* Metric accent */
       --mono: 'IBM Plex Mono', monospace;
       --display: 'Space Grotesk', sans-serif;
       --body: 'Inter', sans-serif;
@@ -39,26 +37,26 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    a { color: inherit; }
+    a { color: inherit; text-decoration: none; }
     .wrap { max-width: 1040px; margin: 0 auto; padding: 0 28px; }
 
     /* NAV */
     header.nav {
       position: sticky; top: 0; z-index: 50;
-      background: rgba(248, 250, 252, 0.85);
+      background: rgba(11, 15, 23, 0.85);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid var(--card-border);
     }
     .nav-inner {
       display: flex; align-items: center; justify-content: space-between;
       padding: 16px 28px; max-width: 1040px; margin: 0 auto; gap: 12px;
     }
-    .nav-mark { font-family: var(--mono); font-size: 14px; font-weight: 500; flex-shrink: 0; }
+    .nav-mark { font-family: var(--mono); font-size: 14px; font-weight: 500; color: var(--teal); }
     .nav-links { 
       display: flex; gap: 24px; list-style: none; font-size: 14px; font-weight: 500;
       flex: 1; min-width: 0;
     }
-    .nav-links a { text-decoration: none; color: var(--ink-soft); transition: color .2s; }
+    .nav-links a { color: var(--ink-soft); transition: color .2s; }
     .nav-links a:hover { color: var(--teal); }
     
     @media(max-width: 768px) { 
@@ -68,21 +66,9 @@
         -webkit-overflow-scrolling: touch; scrollbar-width: none;
       } 
       .nav-links::-webkit-scrollbar { display: none; }
-      .nav-mark, .lang-toggle { flex-shrink: 0; }
     }
 
-    .lang-toggle { display: flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: #fff; }
-    .lang-btn {
-      font-family: var(--mono); font-size: 12px; font-weight: 500;
-      padding: 8px 14px; background: transparent; border: none; cursor: pointer;
-      color: var(--ink-soft); transition: all .15s ease;
-      min-height: 44px; min-width: 44px;
-    }
-    .lang-btn + .lang-btn { border-left: 1px solid var(--line); }
-    .lang-btn.active { background: var(--ink); color: #fff; }
-    .lang-btn:hover:not(.active) { background: #F1F5F9; }
-
-    /* HERO WITH HEADSHOT */
+    /* HERO SECTION */
     .hero { padding: 60px 0 40px; }
     .hero-grid { display: grid; grid-template-columns: 1.4fr 0.8fr; gap: 40px; align-items: center; }
     @media(max-width: 840px) { .hero-grid { grid-template-columns: 1fr; } }
@@ -109,33 +95,30 @@
     
     .btn {
       font-family: var(--body); font-weight: 600; font-size: 14px;
-      padding: 12px 20px; border-radius: 6px; text-decoration: none;
+      padding: 12px 20px; border-radius: 8px; cursor: pointer;
       display: inline-flex; align-items: center; gap: 8px;
-      transition: all .2s ease; min-height: 44px;
+      transition: all .2s ease; min-height: 44px; border: none;
     }
-    .btn-primary { background: var(--teal); color: #fff; box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25); }
-    .btn-primary:hover { transform: translateY(-2px); background: #0F766E; }
-    .btn-outline { border: 1px solid var(--line); background: #fff; color: var(--ink); }
-    .btn-outline:hover { transform: translateY(-2px); border-color: var(--ink); }
+    .btn-primary { background: var(--teal); color: #0B0F17; font-weight: 700; box-shadow: 0 4px 14px rgba(20, 184, 166, 0.3); }
+    .btn-primary:hover { transform: translateY(-2px); background: #11998e; }
+    .btn-outline { border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+    .btn-outline:hover { transform: translateY(-2px); border-color: var(--teal); color: var(--teal); }
 
-    /* PROFILE PHOTO STYLING */
     .hero-avatar { position: relative; text-align: center; }
     .avatar-img {
-      width: 100%; max-width: 280px; aspect-ratio: 1/1; object-fit: cover;
-      border-radius: 16px; border: 2px solid var(--line);
-      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.01);
+      width: 100%; max-width: 260px; aspect-ratio: 1/1; object-fit: cover;
+      border-radius: 20px; border: 2px solid var(--line);
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5);
     }
 
-    /* METRIC STAT COUNTER BAR */
+    /* STATS BAR */
     .stats-bar {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
       margin-top: 40px; padding: 24px; background: var(--card);
-      border: 1px solid var(--line); border-radius: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px solid var(--card-border); border-radius: 12px;
     }
     @media(max-width: 768px) { .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
-    .stat-item { text-align: left; }
-    .stat-number { font-family: var(--display); font-size: 26px; font-weight: 700; color: var(--ink); line-height: 1.1; }
+    .stat-number { font-family: var(--display); font-size: 26px; font-weight: 700; color: var(--teal); }
     .stat-label { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
 
     /* SECTIONS */
@@ -143,79 +126,108 @@
     .section-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 24px; }
     .section-num { font-family: var(--mono); font-size: 13px; color: var(--teal); font-weight: 500; }
     h2 { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -0.01em; }
-    .rule { border: none; border-top: 1px solid var(--line); }
+    .rule { border: none; border-top: 1px solid var(--card-border); margin-bottom: 32px; }
+
+    /* CARDS & MODERN PANELS */
+    .panel {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 12px; padding: 28px; transition: border-color 0.2s ease;
+    }
+    .panel:hover { border-color: var(--line); }
 
     /* ABOUT */
-    .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; }
-    @media(max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
-    .about-text p { font-size: 16px; color: var(--ink-soft); margin-bottom: 16px; }
+    .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; }
+    @media(max-width: 760px) { .about-grid { grid-template-columns: 1fr; } }
+    .about-text p { font-size: 15.5px; color: var(--ink-soft); margin-bottom: 16px; }
     .about-facts { font-family: var(--mono); font-size: 13px; color: var(--ink-soft); }
-    .fact-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--line); }
-    .fact-row span:first-child { color: var(--ink); opacity: .6; }
+    .fact-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--card-border); }
+    .fact-row span:first-child { color: var(--ink); opacity: .7; }
+    .fact-row span:last-child { color: var(--teal); font-weight: 500; }
 
     /* EXPERIENCE */
-    .exp-item {
-      display: grid; grid-template-columns: 150px 1fr; gap: 28px;
-      padding: 24px 0; border-bottom: 1px solid var(--line);
+    .exp-list { display: flex; flex-direction: column; gap: 20px; }
+    .exp-card {
+      background: var(--card); border: 1px solid var(--card-border); border-radius: 12px;
+      padding: 24px; display: grid; grid-template-columns: 160px 1fr; gap: 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
-    .exp-item:first-of-type { border-top: 1px solid var(--line); }
-    @media(max-width: 640px) { .exp-item { grid-template-columns: 1fr; gap: 6px; } }
-    .exp-date { font-family: var(--mono); font-size: 12.5px; color: var(--ink-soft); padding-top: 3px; }
-    .exp-role { font-family: var(--display); font-weight: 600; font-size: 18px; margin-bottom: 2px; }
-    .exp-company { font-size: 14px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
-    .exp-item ul { padding-left: 18px; color: var(--ink-soft); font-size: 14.5px; }
-    .exp-item li { margin-bottom: 6px; }
+    .exp-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+    @media(max-width: 640px) { .exp-card { grid-template-columns: 1fr; gap: 8px; } }
+    .exp-date { font-family: var(--mono); font-size: 13px; color: var(--teal); font-weight: 500; }
+    .exp-role { font-family: var(--display); font-weight: 600; font-size: 18px; color: var(--ink); }
+    .exp-company { font-size: 14px; color: var(--ink-soft); font-weight: 500; margin-bottom: 12px; }
+    .exp-card ul { padding-left: 18px; color: var(--ink-soft); font-size: 14.5px; }
+    .exp-card li { margin-bottom: 6px; }
 
-    /* PROJECTS — MODERNIZED CARDS */
+    /* PROJECTS */
     .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     @media(max-width: 900px) { .proj-grid { grid-template-columns: repeat(2, 1fr); } }
     @media(max-width: 600px) { .proj-grid { grid-template-columns: 1fr; } }
     
     .proj-card {
-      background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+      background: var(--card); border: 1px solid var(--card-border); border-radius: 12px;
       overflow: hidden; display: flex; flex-direction: column; height: 100%;
-      transition: all .2s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+      transition: all .2s ease;
     }
-    .proj-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -10px rgba(0,0,0,0.08); border-color: #CBD5E1; }
+    .proj-card:hover { transform: translateY(-4px); border-color: var(--teal); }
     
-    .proj-img { width: 100%; height: 160px; object-fit: cover; object-position: top; border-bottom: 1px solid var(--line); background: #F1F5F9; }
+    .proj-visual {
+      width: 100%; height: 140px; background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+      display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--card-border);
+      position: relative;
+    }
     .proj-body { padding: 20px; display: flex; flex-direction: column; flex: 1; justify-content: space-between; }
     .proj-title { font-family: var(--display); font-weight: 700; font-size: 17px; margin-bottom: 8px; color: var(--ink); }
-    .proj-desc { font-size: 13.8px; color: var(--ink-soft); margin-bottom: 16px; flex: 1; }
+    .proj-desc { font-size: 13.5px; color: var(--ink-soft); margin-bottom: 16px; flex: 1; }
     
-    .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
-    .tag { font-family: var(--mono); font-size: 11px; padding: 4px 8px; background: #F1F5F9; color: var(--ink-soft); border-radius: 4px; font-weight: 500; }
-    .proj-link { font-family: var(--mono); font-size: 12px; color: var(--teal); text-decoration: none; font-weight: 600; }
-    .proj-link:hover { text-decoration: underline; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { font-family: var(--mono); font-size: 11px; padding: 4px 8px; background: rgba(255,255,255,0.05); color: var(--teal); border-radius: 4px; border: 1px solid rgba(20, 184, 166, 0.2); }
 
     /* SKILLS */
-    .skill-group { margin-bottom: 24px; }
-    .skill-label { font-family: var(--mono); font-size: 12px; color: var(--teal); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 10px; font-weight: 500; }
+    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    @media(max-width: 640px) { .skills-grid { grid-template-columns: 1fr; } }
+    .skill-label { font-family: var(--mono); font-size: 12px; color: var(--teal); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 12px; font-weight: 600; }
     .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
     .skill-tag {
-      font-family: var(--mono); font-size: 13px; padding: 6px 12px;
-      border: 1px solid var(--line); border-radius: 6px; color: var(--ink);
-      background: var(--card); font-weight: 500;
+      font-family: var(--mono); font-size: 13px; padding: 8px 14px;
+      border: 1px solid var(--card-border); border-radius: 6px; color: var(--ink);
+      background: rgba(255, 255, 255, 0.02); font-weight: 500;
     }
+    .skill-tag.highlight { border-color: var(--teal); background: var(--teal-light); color: var(--teal); }
 
     /* ACHIEVEMENTS */
-    .ach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; }
+    .ach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     @media(max-width: 760px) { .ach-grid { grid-template-columns: 1fr; } }
-    .ach-photo img { width: 100%; border-radius: 12px; display: block; border: 1px solid var(--line); }
-    .ach-caption { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); margin-top: 10px; line-height: 1.5; }
-    .ach-item { padding: 16px 0; border-bottom: 1px solid var(--line); }
-    .ach-item:first-child { padding-top: 0; }
-    .ach-title { font-family: var(--display); font-weight: 700; font-size: 16px; margin-bottom: 4px; }
-    .ach-sub { font-size: 13.5px; color: var(--ink-soft); }
+    .ach-item { padding: 16px; background: var(--card); border: 1px solid var(--card-border); border-radius: 10px; }
+    .ach-title { font-family: var(--display); font-weight: 700; font-size: 15px; margin-bottom: 4px; color: var(--ink); }
+    .ach-sub { font-size: 13px; color: var(--ink-soft); }
 
-    /* CONTACT */
-    .contact { background: var(--bg-dark); color: #F8FAFC; border-radius: 16px; padding: 56px 32px; text-align: center; }
-    .contact h2 { color: #fff; }
-    .contact p { color: #94A3B8; max-width: 480px; margin: 12px auto 28px; font-size: 15.5px; }
-    .contact-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-    .contact .btn-primary { background: var(--teal); }
-    .contact .btn-outline { border-color: #334155; background: transparent; color: #F8FAFC; }
-    .contact .btn-outline:hover { background: #F8FAFC; color: var(--bg-dark); }
+    /* CONTACT MODAL & SECTION */
+    .contact-box { background: linear-gradient(135deg, #131B2E 0%, #0F172A 100%); border: 1px solid var(--card-border); border-radius: 16px; padding: 48px 32px; text-align: center; }
+    .contact-box h2 { color: #fff; margin-bottom: 12px; }
+    .contact-box p { color: var(--ink-soft); max-width: 500px; margin: 0 auto 28px; font-size: 15px; }
+
+    /* MODAL POPUP */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(6px);
+      display: none; justify-content: center; align-items: center; z-index: 100;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+      padding: 32px; max-width: 440px; width: 90%; position: relative;
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5);
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px; background: none; border: none;
+      color: var(--ink-soft); font-size: 20px; cursor: pointer;
+    }
+    .modal-close:hover { color: var(--teal); }
+    .modal-detail { margin-top: 16px; text-align: left; font-family: var(--mono); font-size: 13.5px; }
+    .modal-detail-item { padding: 10px 0; border-bottom: 1px solid var(--card-border); display: flex; justify-content: space-between; }
+    .modal-detail-item span { color: var(--ink-soft); }
+    .modal-detail-item strong { color: var(--ink); font-weight: 500; }
 
     footer { padding: 36px 0; text-align: center; font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
   </style>
@@ -226,219 +238,177 @@
   <div class="nav-inner">
     <div class="nav-mark">RT / DATA_ANALYST</div>
     <ul class="nav-links">
-      <li><a href="#about" data-i18n="nav.about">Über mich</a></li>
-      <li><a href="#experience" data-i18n="nav.experience">Erfahrung</a></li>
-      <li><a href="#projects" data-i18n="nav.projects">Projekte</a></li>
-      <li><a href="#skills" data-i18n="nav.skills">Kenntnisse</a></li>
-      <li><a href="#achievements" data-i18n="nav.achievements">Erfolge</a></li>
-      <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
+      <li><a href="#about">Über mich</a></li>
+      <li><a href="#experience">Erfahrung</a></li>
+      <li><a href="#projects">Projekte</a></li>
+      <li><a href="#skills">Kenntnisse</a></li>
+      <li><a href="#achievements">Erfolge</a></li>
+      <li><a href="#contact">Kontakt</a></li>
     </ul>
-    <div class="lang-toggle" role="group" aria-label="Language switch">
-      <button type="button" class="lang-btn" data-lang="de">DE</button>
-      <button type="button" class="lang-btn" data-lang="en">EN</button>
-    </div>
   </div>
 </header>
 
 <main>
-  <!-- HERO SECTION WITH PNG HEADSHOT -->
+  <!-- HERO SECTION -->
   <section class="hero">
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <div class="hero-eyebrow"><span class="dot"></span><span data-i18n="hero.eyebrow">Offen für neue Positionen in Deutschland</span></div>
+          <div class="hero-eyebrow"><span class="dot"></span>Offen für Positionen in Deutschland</div>
           <h1 class="name">Rakhitha Thottingal</h1>
-          <p class="role" data-i18n="hero.role">Data &amp; Process Analystin — <span class="accent">macht aus Rohsignalen Entscheidungen</span></p>
-          <p class="tagline" data-i18n="hero.tagline">Ich baue Echtzeit-Datenpipelines, prüfe technische Prozesse auf Qualität und entwickle Dashboards, die wirklich genutzt werden — mit Python, SQL und einer gesunden Portion Neugier für die Ursache.</p>
+          <p class="role">Junior Data & Process Analyst — <span class="accent">Datengetriebene Optimierung</span></p>
+          <p class="tagline">Ich analysiere Geschäftsprozesse, baue automatisierte Datenpipelines und entwickle aussagekräftige Power BI & Python Dashboards für fundierte Entscheidungen.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:rakhitha99@gmail.com?subject=Hello%20Rakhitha" data-i18n="hero.cta1">Kontakt aufnehmen</a>
-            <a class="btn btn-outline" href="Lebenslauf_Rakhitha_Thottingal.pdf" download data-i18n="hero.cvDE">Lebenslauf (DE)</a>
-            <a class="btn btn-outline" href="CV_Rakhitha_Thottingal_EN.pdf" download data-i18n="hero.cvEN">CV (EN)</a>
+            <button class="btn btn-primary" onclick="toggleModal(true)">Kontakt aufnehmen</button>
+            <a class="btn btn-outline" href="Lebenslauf_Rakhitha_Thottingal.pdf" download>Lebenslauf (DE)</a>
+            <a class="btn btn-outline" href="CV_Rakhitha_Thottingal_EN.pdf" download>CV (EN)</a>
           </div>
         </div>
         <div class="hero-avatar">
-          <img class="avatar-img" src="profile.png" alt="Rakhitha Thottingal — Data & Process Analyst">
+          <img class="avatar-img" src="profile.png" alt="Rakhitha Thottingal — Data Analyst">
         </div>
       </div>
 
-      <!-- METRIC COUNTER BAR -->
+      <!-- METRIC BAR -->
       <div class="stats-bar">
         <div class="stat-item">
           <div class="stat-number">3+</div>
-          <div class="stat-label" data-i18n="stat.exp">Jahre Erfahrung</div>
+          <div class="stat-label">Jahre Analyserfahrung</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">10k+</div>
-          <div class="stat-label" data-i18n="stat.data">Signale / Tag verarbeitet</div>
+          <div class="stat-number">SQL & Python</div>
+          <div class="stat-label">Kernfokus / Analytics</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">1st</div>
-          <div class="stat-label" data-i18n="stat.sih">Smart India Hackathon</div>
+          <div class="stat-number">B2</div>
+          <div class="stat-label">Deutsch (Offiziell)</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">B1+</div>
-          <div class="stat-label" data-i18n="stat.lang">Deutsch (Sicher im Beruf)</div>
+          <div class="stat-number">M.Sc.</div>
+          <div class="stat-label">Technische Logistik (U DE)</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ABOUT SECTION -->
   <section id="about">
     <div class="wrap">
-      <div class="section-head"><span class="section-num">01</span><h2 data-i18n="about.heading">Über mich</h2></div>
-      <hr class="rule" style="margin-bottom:36px;">
+      <div class="section-head"><span class="section-num">01</span><h2>Über mich</h2></div>
+      <hr class="rule">
       <div class="about-grid">
-        <div class="about-text">
-          <p data-i18n="about.p1">Ich bin Data-Analystin mit über drei Jahren praktischer Erfahrung an der Schnittstelle von technischer Prozessqualität und angewandter Datenanalyse — von der Validierung von ERP-Datenflüssen über den Aufbau von Live-Marktdaten-Pipelines bis hin zu Dashboards, mit denen auch nicht-technische Stakeholder direkt arbeiten können.</p>
-          <p data-i18n="about.p2">Aktuell lebe ich in Duisburg und studiere M.Sc. Technische Logistik an der Universität Duisburg-Essen, während ich parallel als Administration Support arbeite. Mich interessiert vor allem, <em>warum</em> Zahlen nicht passen — nicht nur, dass sie es nicht tun.</p>
-          <p data-i18n="about.p3">Durch meine mehr als einjährige Arbeit im deutschen Büroumfeld kommuniziere ich im beruflichen Alltag sicher auf Deutsch. Aktuell befinde ich mich auf B1-Niveau mit klarem Ziel Richtung B2.</p>
+        <div class="panel about-text">
+          <p>Als Data Analystin verbinde ich technische Expertise in SQL, Python und Power BI mit pragmatischem Prozessverständnis. Mein Fokus liegt darauf, komplexe Datenflüsse zu bereinigen, operative Engpässe zu identifizieren und Daten in klare Handlungsempfehlungen zu übersetzen.</p>
+          <p>Derzeit absolviere ich mein Masterstudium in Technische Logistik an der Universität Duisburg-Essen und arbeite im administrativen Support. Hierbei validiere ich ERP-Datenflüsse und optimiere Abrechnungsprozesse im täglichen Betrieb.</p>
         </div>
-        <div class="about-facts">
-          <div class="fact-row"><span data-i18n="about.fact.location">Standort</span><span>Duisburg, Deutschland</span></div>
-          <div class="fact-row"><span data-i18n="about.fact.experience">Erfahrung</span><span data-i18n="about.fact.experienceVal">3+ Jahre</span></div>
-          <div class="fact-row"><span data-i18n="about.fact.stack">Kernkompetenz</span><span>Python · SQL</span></div>
-          <div class="fact-row"><span data-i18n="about.fact.languages">Sprachen</span><span data-i18n="about.fact.languagesVal">EN · DE (B1+, Berufssicher)</span></div>
-          <div class="fact-row"><span data-i18n="about.fact.email">E-Mail</span><span>rakhitha99@gmail.com</span></div>
-          <div class="fact-row"><span data-i18n="about.fact.phone">Telefon</span><span>+49 1520 5414390</span></div>
+        <div class="panel about-facts">
+          <div class="fact-row"><span>Standort</span><span>47055 Duisburg</span></div>
+          <div class="fact-row"><span>Adresse</span><span>Im Schlenk 26</span></div>
+          <div class="fact-row"><span>Fokus</span><span>Data & Business Analytics</span></div>
+          <div class="fact-row"><span>Deutschstufe</span><span>B2 Zertifiziert</span></div>
+          <div class="fact-row"><span>E-Mail</span><span>rakhitha99@gmail.com</span></div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- EXPERIENCE SECTION -->
   <section id="experience">
     <div class="wrap">
-      <div class="section-head"><span class="section-num">02</span><h2 data-i18n="exp.heading">Berufliche Erfahrung</h2></div>
+      <div class="section-head"><span class="section-num">02</span><h2>Berufliche Erfahrung</h2></div>
+      <hr class="rule">
+      <div class="exp-list">
 
-      <div class="exp-item">
-        <div class="exp-date">04.2025 — <span data-i18n="exp.present">heute</span></div>
-        <div>
-          <div class="exp-role"><span data-i18n="exp.job1.role">Administration Support</span> <span style="color:var(--ink-soft); font-weight:400; font-size:14px;" data-i18n="exp.job1.type">(Minijob)</span></div>
-          <div class="exp-company">Comcoplast GmbH, Düsseldorf</div>
-          <ul>
-            <li data-i18n="exp.job1.b1">Überwachung und Validierung kritischer Logistik- und Abrechnungsdaten in Microsoft Dynamics 365 Business Central</li>
-            <li data-i18n="exp.job1.b2">Analyse operativer Abläufe und Implementierung von Tracking-Protokollen zur Vermeidung von Engpässen</li>
-            <li data-i18n="exp.job1.b3">Technische und operative Abstimmung zwischen internationalen Herstellern und internen Teams</li>
-          </ul>
+        <div class="exp-card">
+          <div class="exp-date">04.2025 — Heute</div>
+          <div>
+            <div class="exp-role">Administration Support</div>
+            <div class="exp-company">Comcoplast GmbH, Düsseldorf</div>
+            <ul>
+              <li>Überwachung und Validierung kritischer Logistik- und Abrechnungsdaten in Microsoft Dynamics 365 Business Central.</li>
+              <li>Analyse operativer Datenströme zur Vermeidung von Prozessengpässen.</li>
+              <li>Sicherstellung der Datenkonsistenz und Abstimmung zwischen internationalen Schnittstellen.</li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <div class="exp-item">
-        <div class="exp-date">08.2023 — 02.2025</div>
-        <div>
-          <div class="exp-role" data-i18n="exp.job2.role">Technology Analyst</div>
-          <div class="exp-company">Pratiti Analytics Solutions LLP, Chennai</div>
-          <ul>
-            <li data-i18n="exp.job2.b1">Aufbau einer skalierbaren Echtzeit-Datenpipeline zur Erfassung von Live-Marktdaten (NSE) über API und RabbitMQ</li>
-            <li data-i18n="exp.job2.b2">Implementierung von RSI-, MACD- und VWAP-Algorithmen in Python zur automatisierten Signalgenerierung</li>
-            <li data-i18n="exp.job2.b3">Entwicklung einer interaktiven Plotly-Dash-Webanwendung zur Signal-, Qualitäts- und Performance-Analyse</li>
-            <li data-i18n="exp.job2.b4">Restrukturierung von SQLite/SQL-Datenbanken, was zu spürbar schnelleren Abfragezeiten führte</li>
-          </ul>
+        <div class="exp-card">
+          <div class="exp-date">08.2023 — 02.2025</div>
+          <div>
+            <div class="exp-role">Technology Analyst (Data)</div>
+            <div class="exp-company">Pratiti Analytics Solutions LLP, India</div>
+            <ul>
+              <li>Aufbau automatisierter Datenpipelines zur Verarbeitung strukturierter Zeitreihendaten mittels Python und SQL.</li>
+              <li>Entwicklung interaktiver Dashboards (Plotly/Dash) zur Visualisierung von Leistungskennzahlen (KPIs).</li>
+              <li>Optimierung relationaler SQL-Datenbanken für beschleunigte Abfragezeiten.</li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <div class="exp-item">
-        <div class="exp-date">08.2021 — 01.2023</div>
-        <div>
-          <div class="exp-role" data-i18n="exp.job3.role">Analyst Programmer (Daten &amp; Reporting)</div>
-          <div class="exp-company">Ramco Systems, Chennai</div>
-          <ul>
-            <li data-i18n="exp.job3.b1">Administration und Performance-Tuning globaler HR-Datenbanksysteme mittels SQL und SQL Server Profiler</li>
-            <li data-i18n="exp.job3.b2">Aufbau von SSRS-Reporting-Strukturen und Entwicklung maßgeschneiderter SQL-Abfragen</li>
-          </ul>
+        <div class="exp-card">
+          <div class="exp-date">08.2021 — 01.2023</div>
+          <div>
+            <div class="exp-role">Analyst Programmer</div>
+            <div class="exp-company">Ramco Systems, India</div>
+            <ul>
+              <li>Sicherstellung der Datenqualität und Performance-Optimierung von Datenbanken via T-SQL.</li>
+              <li>Erstellung strukturierter SSRS-Berichte und Datenanalysen für interne Stakeholder.</li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <div class="exp-item">
-        <div class="exp-date">10.2020 — 03.2021</div>
-        <div>
-          <div class="exp-role" data-i18n="exp.job4.role">Praktikum — Lead Management Systems</div>
-          <div class="exp-company">First Feet Business Services, India</div>
-          <ul>
-            <li data-i18n="exp.job4.b1">Entwicklung einer Web-Applikation und relationaler SQL/PL-SQL-Datenbanken zur strukturierten Datenerfassung</li>
-            <li data-i18n="exp.job4.b2">Erstellung von Power-BI-Dashboards zur Prozess-Transparenz sowie Implementierung von Datenmaskierung und Zugriffskontrollen</li>
-          </ul>
-        </div>
       </div>
     </div>
   </section>
 
+  <!-- PROJECTS SECTION -->
   <section id="projects">
     <div class="wrap">
-      <div class="section-head"><span class="section-num">03</span><h2 data-i18n="proj.heading">Projekte</h2></div>
+      <div class="section-head"><span class="section-num">03</span><h2>Projekte & Analysen</h2></div>
+      <hr class="rule">
       <div class="proj-grid">
 
         <div class="proj-card">
-          <img class="proj-img" src="dashboard-screenshot.png" alt="Stoxila live trading signal dashboard preview">
+          <div class="proj-visual">
+            <svg width="48" height="48" fill="none" stroke="#14B8A6" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+          </div>
           <div class="proj-body">
             <div>
-              <div class="proj-title" data-i18n="proj.p1.title">Live-Trading-Signal-Dashboard</div>
-              <p class="proj-desc" data-i18n="proj.p1.desc">Echtzeit-Signal-Engine für NSE-Marktdaten — RabbitMQ-Ingestion, RSI/MACD/VWAP-basierte Kauf-/Verkaufssignale, Telegram-Benachrichtigungen und ein filterbares Plotly-Dash-Frontend zur Analyse der Signalgenauigkeit.</p>
+              <div class="proj-title">Echtzeit-Datenpipeline & Dashboard</div>
+              <p class="proj-desc">Automatisierte Pipeline zur Erfassung und Aufbereitung lokaler Datenströme mit integriertem Dashboard zur Visualisierung von Trends.</p>
             </div>
-            <div>
-              <div class="tag-row">
-                <span class="tag">Python</span><span class="tag">RabbitMQ</span><span class="tag">Dash</span><span class="tag">SQL</span>
-              </div>
-              <a class="proj-link" href="https://github.com/rakhitha-t" target="_blank" rel="noopener">GitHub Repository →</a>
+            <div class="tag-row">
+              <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Dash</span>
             </div>
           </div>
         </div>
 
         <div class="proj-card">
-          <div class="proj-body" style="padding-top:24px;">
+          <div class="proj-visual">
+            <svg width="48" height="48" fill="none" stroke="#14B8A6" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="proj-body">
             <div>
-              <div class="proj-title" data-i18n="proj.p2.title">ERP-Datenintegritätsprüfung</div>
-              <p class="proj-desc" data-i18n="proj.p2.desc">Validierungsschicht für Logistik- und Abrechnungsdaten in MS Dynamics 365 Business Central — Tracking-Protokolle zur frühzeitigen Erkennung von Anomalien.</p>
+              <div class="proj-title">ERP-Datenintegritätsprüfung</div>
+              <p class="proj-desc">Entwicklung von Validierungsroutinen zur Erkennung von Inkonsistenzen in Logistik- und Abrechnungsdaten in Business Central.</p>
             </div>
-            <div>
-              <div class="tag-row">
-                <span class="tag">Dynamics 365</span><span class="tag">Process QA</span><span class="tag">SQL</span>
-              </div>
-              <a class="proj-link" href="https://github.com/rakhitha-t" target="_blank" rel="noopener">Details anzeigen →</a>
+            <div class="tag-row">
+              <span class="tag">Dynamics 365</span><span class="tag">Data Quality</span>
             </div>
           </div>
         </div>
 
         <div class="proj-card">
-          <div class="proj-body" style="padding-top:24px;">
-            <div>
-              <div class="proj-title" data-i18n="proj.p3.title">HR-Reporting &amp; Datenbank-Tuning</div>
-              <p class="proj-desc" data-i18n="proj.p3.desc">Performance-Tuning globaler HR-Datenbanksysteme sowie Aufbau von SSRS-Reporting-Strukturen für verlässliche Qualitätskennzahlen.</p>
-            </div>
-            <div>
-              <div class="tag-row">
-                <span class="tag">SQL Server</span><span class="tag">SSRS</span><span class="tag">T-SQL</span>
-              </div>
-              <a class="proj-link" href="https://github.com/rakhitha-t" target="_blank" rel="noopener">Details anzeigen →</a>
-            </div>
+          <div class="proj-visual">
+            <svg width="48" height="48" fill="none" stroke="#14B8A6" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
           </div>
-        </div>
-
-        <div class="proj-card">
-          <div class="proj-body" style="padding-top:24px;">
+          <div class="proj-body">
             <div>
-              <div class="proj-title" data-i18n="proj.p4.title">Stickmaschinen-Überwachung — SIH 2019</div>
-              <p class="proj-desc" data-i18n="proj.p4.desc">Entwicklung eines Online-Überwachungssystems für Stickmaschinen mit Machine Learning, Computer Vision und Edge Computing, inklusive Slack- und Twilio-Integration für Echtzeit-Benachrichtigungen.</p>
+              <div class="proj-title">Datenbank-Performance Tuning</div>
+              <p class="proj-desc">Optimierung komplexer SQL-Abfragen und Tabellenstrukturen zur Reduzierung von Ladezeiten im HR-Berichtswesen.</p>
             </div>
-            <div>
-              <div class="tag-row">
-                <span class="tag">Computer Vision</span><span class="tag">Edge Computing</span><span class="tag">Slack API</span>
-              </div>
-              <a class="proj-link" href="https://github.com/rakhitha-t" target="_blank" rel="noopener">GitHub Repository →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="proj-card">
-          <div class="proj-body" style="padding-top:24px;">
-            <div>
-              <div class="proj-title" data-i18n="proj.p5.title">Frühwarnsystem gegen Mensch-Tier-Konflikte</div>
-              <p class="proj-desc" data-i18n="proj.p5.desc">Sensorbasiertes Frühwarnsystem zum Schutz von Ackerland vor Wildtieren — mit Kamera, Elektrozaun, Beleuchtung und LCD-Display, gesteuert über einen Mikrocontroller mit Python.</p>
-            </div>
-            <div>
-              <div class="tag-row">
-                <span class="tag">Python</span><span class="tag">IoT Sensors</span><span class="tag">Microcontroller</span>
-              </div>
-              <a class="proj-link" href="https://github.com/rakhitha-t" target="_blank" rel="noopener">GitHub Repository →</a>
+            <div class="tag-row">
+              <span class="tag">SQL Server</span><span class="tag">ETL</span>
             </div>
           </div>
         </div>
@@ -447,174 +417,107 @@
     </div>
   </section>
 
-  <section id="achievements">
-    <div class="wrap">
-      <div class="section-head"><span class="section-num">04</span><h2 data-i18n="ach.heading">Erfolge &amp; Zertifikate</h2></div>
-      <div class="ach-grid">
-        <div class="ach-photo">
-          <img src="sih-team.jpg" alt="Team Cyber Thug Squad celebrating Smart India Hackathon 2019 win at Banaras Hindu University">
-          <div class="ach-caption" data-i18n="ach.photoCaption">Team Cyber Thug Squad — Gewinner des Smart India Hackathon 2019 (Finale, Banaras Hindu University)</div>
-        </div>
-        <div class="ach-list">
-          <div class="ach-item">
-            <div class="ach-title" data-i18n="ach.item1.title">🏆 Gewinner — Smart India Hackathon 2019</div>
-            <div class="ach-sub" data-i18n="ach.item1.sub">Landesweiter Hackathon, organisiert von MHRD, AICTE &amp; Persistent Systems — Software Edition Finale, Banaras Hindu University</div>
-          </div>
-          <div class="ach-item">
-            <div class="ach-title" data-i18n="ach.item2.title">🎓 M.Sc. Computer Science — mit Auszeichnung</div>
-            <div class="ach-sub">Bharathiar University, 2021</div>
-          </div>
-          <div class="ach-item">
-            <div class="ach-title" data-i18n="ach.item3.title">🎓 B.C.A. — mit Auszeichnung</div>
-            <div class="ach-sub">Bharathiar University, 2019</div>
-          </div>
-          <div class="ach-item">
-            <div class="ach-title" data-i18n="ach.item4.title">📜 Robotic Process Automation — GUVI / UiPath Academic Alliance</div>
-            <div class="ach-sub" data-i18n="ach.item4.sub">Abschlusszertifikat, RPA Skill-a-thon 2020</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- SKILLS SECTION -->
   <section id="skills">
     <div class="wrap">
-      <div class="section-head"><span class="section-num">05</span><h2 data-i18n="skills.heading">Kenntnisse</h2></div>
+      <div class="section-head"><span class="section-num">04</span><h2>Kernkompetenzen</h2></div>
+      <hr class="rule">
+      <div class="skills-grid">
+        
+        <div class="panel">
+          <div class="skill-label">Datenanalyse & Programmierung</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">SQL (T-SQL, PostgreSQL)</span>
+            <span class="skill-tag highlight">Python (Pandas, NumPy)</span>
+            <span class="skill-tag">Advanced Excel</span>
+            <span class="skill-tag">Power BI</span>
+          </div>
+        </div>
 
-      <div class="skill-group">
-        <div class="skill-label" data-i18n="skills.group1">Sprachen &amp; Frameworks</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Python</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span>
-          <span class="skill-tag">Flask</span><span class="skill-tag">Dash</span><span class="skill-tag">Plotly</span>
-          <span class="skill-tag">SQL</span><span class="skill-tag">JavaScript</span><span class="skill-tag">HTML/CSS</span>
+        <div class="panel">
+          <div class="skill-label">Datenbanken & Methoden</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">Datenmodellierung</span>
+            <span class="skill-tag">MS SQL Server</span>
+            <span class="skill-tag highlight">Datenbereinigung & QA</span>
+            <span class="skill-tag">MS Dynamics 365 BC</span>
+          </div>
         </div>
+
       </div>
-      <div class="skill-group">
-        <div class="skill-label" data-i18n="skills.group2">Datenbanken &amp; Infrastruktur</div>
-        <div class="skill-tags">
-          <span class="skill-tag">SQL Server</span><span class="skill-tag">SQLite</span><span class="skill-tag">PL/SQL</span>
-          <span class="skill-tag">RabbitMQ</span><span class="skill-tag">REST APIs</span><span class="skill-tag">AWS</span>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS SECTION -->
+  <section id="achievements">
+    <div class="wrap">
+      <div class="section-head"><span class="section-num">05</span><h2>Ausbildung & Meilensteine</h2></div>
+      <hr class="rule">
+      <div class="ach-grid">
+        <div class="ach-item">
+          <div class="ach-title">M.Sc. Technische Logistik</div>
+          <div class="ach-sub">Universität Duisburg-Essen (Laufend)</div>
         </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-label" data-i18n="skills.group3">BI &amp; ERP</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Power BI</span><span class="skill-tag">Tableau</span><span class="skill-tag">SSRS</span>
-          <span class="skill-tag">MS Dynamics 365 BC</span>
+        <div class="ach-item">
+          <div class="ach-title">M.Sc. Computer Science</div>
+          <div class="ach-sub">Bharathiar University, 2021</div>
         </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-label" data-i18n="skills.group4">Methoden</div>
-        <div class="skill-tags">
-          <span class="skill-tag" data-i18n="skills.m1">Prozessanalyse</span><span class="skill-tag" data-i18n="skills.m2">Root-Cause-Analyse</span>
-          <span class="skill-tag" data-i18n="skills.m3">Datenmodellierung</span><span class="skill-tag">Prototyping</span>
+        <div class="ach-item">
+          <div class="ach-title">Smart India Hackathon Gewinner</div>
+          <div class="ach-sub">1. Platz im landesweiten Tech-Wettbewerb</div>
+        </div>
+        <div class="ach-item">
+          <div class="ach-title">B2 Deutschzertifikat</div>
+          <div class="ach-sub">Fließend in Wort und Schrift für den Berufstag</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CONTACT SECTION -->
   <section id="contact">
     <div class="wrap">
-      <div class="contact">
-        <h2 data-i18n="contact.heading">Lass uns sprechen</h2>
-        <p data-i18n="contact.body">Offen für Junior-/Mid-Level-Positionen als Data Analyst in Deutschland. Am schnellsten erreichst du mich per E-Mail — ich schicke gerne meinen Lebenslauf oder gehe die Projekte oben im Detail durch.</p>
-        <div class="contact-links">
-          <a class="btn btn-primary" href="mailto:rakhitha99@gmail.com?subject=Hello%20Rakhitha">rakhitha99@gmail.com</a>
-          <a class="btn btn-outline" href="https://linkedin.com/in/rakhitha-thottingal" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn btn-outline" href="https://github.com/rakhitha-t" target="_blank" rel="noopener">GitHub</a>
-        </div>
+      <div class="contact-box">
+        <h2>Kontakt aufnehmen</h2>
+        <p>Ich stehe für Fragen zu meinen Projekten oder für ein Gespräch bezüglich passender Junior-Analystenstellen gerne zur Verfügung.</p>
+        <button class="btn btn-primary" onclick="toggleModal(true)">Kontaktdaten anzeigen</button>
       </div>
     </div>
   </section>
 </main>
 
-<footer>Duisburg, Deutschland — © 2026 Rakhitha Thottingal</footer>
+<!-- MODAL POPUP -->
+<div class="modal-overlay" id="contactModal" onclick="if(event.target === this) toggleModal(false)">
+  <div class="modal-card">
+    <button class="modal-close" onclick="toggleModal(false)">&times;</button>
+    <h3 style="font-family: var(--display); color: var(--ink);">Kontaktdaten</h3>
+    <div class="modal-detail">
+      <div class="modal-detail-item"><span>Name:</span> <strong>Rakhitha Thottingal</strong></div>
+      <div class="modal-detail-item"><span>E-Mail:</span> <strong>rakhitha99@gmail.com</strong></div>
+      <div class="modal-detail-item"><span>Telefon:</span> <strong>+49 1520 5414390</strong></div>
+      <div class="modal-detail-item"><span>Adresse:</span> <strong>Im Schlenk 26, 47055 Duisburg</strong></div>
+      <div class="modal-detail-item"><span>Deutsch:</span> <strong>B2 (Offiziell)</strong></div>
+    </div>
+    <div style="margin-top: 24px; text-align: center;">
+      <a class="btn btn-primary" href="mailto:rakhitha99@gmail.com?subject=Anfrage%20über%20Portfolio" style="width: 100%; justify-content: center;">E-Mail Senden</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">Im Schlenk 26, 47055 Duisburg — © 2026 Rakhitha Thottingal</div>
+</footer>
 
 <script>
-const translations = {
-  de: {},
-  en: {
-    "nav.about":"About","nav.experience":"Experience","nav.projects":"Projects","nav.skills":"Skills","nav.achievements":"Achievements","nav.contact":"Contact",
-    "hero.eyebrow":"Open to opportunities in Germany",
-    "hero.role":"Data &amp; Process Analyst — <span class=\"accent\">turning raw signals into decisions</span>",
-    "hero.tagline":"I build real-time data pipelines, quality-check technical processes, and ship dashboards people actually use — with Python, SQL, and a healthy obsession with finding the root cause.",
-    "hero.cta1":"Get in touch",
-    "hero.cvEN":"Download CV (EN)","hero.cvDE":"Lebenslauf (DE)",
-    "stat.exp":"Years Experience","stat.data":"Signals / Day Processed","stat.sih":"Smart India Hackathon","stat.lang":"German (Workplace Fluent)",
-    "about.heading":"About",
-    "about.p1":"I'm a data analyst with three-plus years of hands-on experience sitting at the intersection of technical process quality and applied data science — validating ERP data flows, building live market-data pipelines, and translating messy operational signals into dashboards that non-technical stakeholders can actually act on.",
-    "about.p2":"Currently based in Duisburg, Germany, pursuing an M.Sc. in Technical Logistics at the University of Duisburg-Essen while working part-time in Administration Support. I like problems where the interesting part is figuring out <em>why</em> the numbers look wrong, not just reporting that they do.",
-    "about.p3":"Working in a German office environment for over a year has given me the confidence to communicate effectively in professional settings. I am officially at a B1 level and actively working toward B2.",
-    "about.fact.location":"Location","about.fact.experience":"Experience","about.fact.experienceVal":"3+ years",
-    "about.fact.stack":"Core stack","about.fact.languages":"Languages","about.fact.languagesVal":"EN · DE (B1+, Workplace Fluent)",
-    "about.fact.email":"Email","about.fact.phone":"Phone",
-    "exp.heading":"Experience","exp.present":"present",
-    "exp.job1.role":"Administration Support","exp.job1.type":"(Minijob)",
-    "exp.job1.b1":"Monitor and validate critical logistics and billing data in Microsoft Dynamics 365 Business Central",
-    "exp.job1.b2":"Analyze operational workflows and implement tracking protocols to prevent bottlenecks",
-    "exp.job1.b3":"Coordinate technical and operational requirements between international manufacturers and internal teams",
-    "exp.job2.role":"Technology Analyst",
-    "exp.job2.b1":"Built a scalable real-time data pipeline ingesting live NSE market data via API + RabbitMQ",
-    "exp.job2.b2":"Implemented RSI, MACD, and VWAP algorithms in Python for automated signal generation",
-    "exp.job2.b3":"Designed an interactive Plotly Dash web app for signal, quality, and performance analysis",
-    "exp.job2.b4":"Restructured SQLite/SQL storage, noticeably improving query speed",
-    "exp.job3.role":"Analyst Programmer (Data &amp; Reporting)",
-    "exp.job3.b1":"Administered and performance-tuned global HR database systems with SQL &amp; SQL Server Profiler",
-    "exp.job3.b2":"Built SSRS reporting structures and custom SQL queries for reliable quality metrics",
-    "exp.job4.role":"Internship — Lead Management Systems",
-    "exp.job4.b1":"Developed a web application and relational SQL/PL-SQL databases for structured data capture",
-    "exp.job4.b2":"Built Power BI dashboards for process transparency; implemented data masking and access control",
-    "proj.heading":"Projects",
-    "proj.p1.title":"Live Trading Signal Dashboard",
-    "proj.p1.desc":"Real-time NSE signal engine — RabbitMQ ingestion, RSI/MACD/VWAP-based Buy/Sell signal generation, Telegram alerts, and a filterable Plotly Dash frontend for tracking signal accuracy over time.",
-    "proj.p2.title":"ERP Data Integrity Monitoring",
-    "proj.p2.desc":"Validation layer for logistics and billing data in MS Dynamics 365 Business Central — tracking protocols to catch anomalies before they cascade downstream.",
-    "proj.p3.title":"HR Reporting &amp; DB Tuning",
-    "proj.p3.desc":"Performance-tuned global HR database systems and built SSRS reporting structures to deliver consistent, trustworthy quality metrics across teams.",
-    "proj.p4.title":"Embroidery Machine Monitoring — SIH 2019",
-    "proj.p4.desc":"Built an online monitoring system for embroidery machines using machine learning, computer vision, and edge computing, with Slack and Twilio integration for real-time alerts.",
-    "proj.p5.title":"Man-Animal Conflict Prevention System",
-    "proj.p5.desc":"Sensor-based early-warning system to protect farmland from wildlife intrusion using a camera, electric fencing, lighting, and an LCD display — controlled by a microcontroller running Python.",
-    "ach.heading":"Achievements &amp; Certifications",
-    "ach.photoCaption":"Team Cyber Thug Squad — Winners, Smart India Hackathon 2019 (Grand Finale, Banaras Hindu University)",
-    "ach.item1.title":"🏆 Winner — Smart India Hackathon 2019",
-    "ach.item1.sub":"National-level hackathon organized by MHRD, AICTE &amp; Persistent Systems — Software Edition Grand Finale, Banaras Hindu University",
-    "ach.item2.title":"🎓 M.Sc. Computer Science — First Class with Distinction",
-    "ach.item3.title":"🎓 B.C.A. — First Class with Distinction",
-    "ach.item4.title":"📜 Robotic Process Automation — GUVI / UiPath Academic Alliance",
-    "ach.item4.sub":"Certificate of completion, RPA Skill-a-thon 2020",
-    "skills.heading":"Skills",
-    "skills.group1":"Languages &amp; Frameworks","skills.group2":"Databases &amp; Infrastructure",
-    "skills.group3":"BI &amp; ERP","skills.group4":"Methods",
-    "skills.m1":"Process Analysis","skills.m2":"Root Cause Analysis","skills.m3":"Data Modeling",
-    "contact.heading":"Let's talk",
-    "contact.body":"Open to Junior / Mid-level Data Analyst roles in Germany. Fastest way to reach me is email — happy to send my CV or walk through any of the projects above."
+function toggleModal(show) {
+  const modal = document.getElementById('contactModal');
+  if (show) {
+    modal.classList.add('active');
+  } else {
+    modal.classList.remove('active');
   }
-};
-
-// Capture initial German strings from DOM
-document.querySelectorAll('[data-i18n]').forEach(el => {
-  translations.de[el.getAttribute('data-i18n')] = el.innerHTML;
-});
-
-function applyLanguage(lang) {
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    const dict = translations[lang];
-    if (dict && dict[key] !== undefined) el.innerHTML = dict[key];
-  });
-  document.documentElement.lang = lang;
-  document.querySelectorAll('.lang-btn').forEach(b => {
-    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
-  });
 }
-
-document.querySelectorAll('.lang-btn').forEach(btn => {
-  btn.addEventListener('click', () => applyLanguage(btn.getAttribute('data-lang')));
-});
-
-// Set default to German
-applyLanguage('de');
 </script>
+
 </body>
 </html>

@@ -237,7 +237,7 @@
     .contact-table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
     .contact-table tr {
       border-bottom: 1px solid #1E293B;
@@ -257,7 +257,7 @@
       text-align: right;
       font-weight: 500;
     }
-    .btn-send-email {
+    .btn-copy-email {
       display: block;
       width: 100%;
       background: #10B981;
@@ -266,12 +266,13 @@
       font-size: 14px;
       padding: 12px 0;
       border-radius: 8px;
+      border: none;
+      cursor: pointer;
       text-align: center;
-      text-decoration: none;
       transition: all 0.2s ease;
       box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
     }
-    .btn-send-email:hover {
+    .btn-copy-email:hover {
       background: #34D399;
       box-shadow: 0 0 18px rgba(16, 185, 129, 0.4);
     }
@@ -520,7 +521,6 @@
     </div>
   </section>
 
-  <!-- REPLACED CONTACT SECTION -->
   <section id="contact">
     <div class="wrap">
       <div class="contact-card">
@@ -553,7 +553,7 @@
       </tr>
       <tr>
         <td data-i18n="modal.labelAddress">Adresse:</td>
-        <td data-i18n="modal.valAddress">Im Schlenk 26, 47055 Duisburg</td>
+        <td data-i18n="modal.valAddress">Duisburg, Deutschland</td>
       </tr>
       <tr>
         <td data-i18n="modal.labelGerman">Deutsch:</td>
@@ -561,7 +561,7 @@
       </tr>
     </table>
 
-    <a href="mailto:rakhitha99@gmail.com?subject=Job%20Opportunity%20-%20Data%20Analyst" class="btn-send-email" data-i18n="modal.sendBtn">E-Mail Senden</a>
+    <button id="copyEmailBtn" class="btn-copy-email" onclick="copyEmailToClipboard()" data-i18n="modal.copyBtn">E-Mail Adresse kopieren</button>
   </div>
 </div>
 
@@ -630,10 +630,10 @@ const translations = {
     "modal.labelEmail":"E-Mail:",
     "modal.labelPhone":"Phone:",
     "modal.labelAddress":"Address:",
-    "modal.valAddress":"Im Schlenk 26, 47055 Duisburg",
+    "modal.valAddress":"Duisburg, Deutschland",
     "modal.labelGerman":"German:",
     "modal.valGerman":"B2 (Official)",
-    "modal.sendBtn":"Send E-Mail"
+    "modal.copyBtn":"Copy E-Mail Address"
   }
 };
 
@@ -663,6 +663,22 @@ function closeContactModal(event, forceClose = false) {
   if (forceClose || event.target.classList.contains('modal-overlay')) {
     document.getElementById('contactModal').classList.remove('active');
   }
+}
+
+/* Clipboard Copy Feature */
+function copyEmailToClipboard() {
+  const email = "rakhitha99@gmail.com";
+  navigator.clipboard.writeText(email).then(() => {
+    const btn = document.getElementById('copyEmailBtn');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = currentLang === 'de' ? 'Kopiert! ✓' : 'Copied! ✓';
+    btn.style.background = '#34D399';
+    
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.style.background = '#10B981';
+    }, 2000);
+  });
 }
 </script>
 </body>
